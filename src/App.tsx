@@ -130,7 +130,7 @@ function App() {
           </div>
           <div className="self-center justify-self-start">
             <div className="neumorph-box w-15 without-inset">
-              <button type="button" onClick={handleFavClick} className={`i-lucide-star text-3xl ${musicList[musicIndex].isFav ? "text-yellow-400" : ""}`} />
+              <button type="button" onClick={handleFavClick} className={`i-lucide-star text-3xl ${isFav ? "text-yellow-400" : ""}`} />
             </div>
           </div>
         </div>
