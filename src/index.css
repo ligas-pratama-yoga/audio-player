@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'roboto';
+  src: url('./assets/static/Roboto-Regular.ttf');
+}
+
+:host,
+:root {
+  --color-nb: #fff;
+}
+
+.font-roboto {
+  font-family: roboto, 'sans-serif';
+}
+
+.neumorph-box {
+  @apply  aspect-1
+          border border-[#f2f2f2]
+          rounded-full flex justify-center
+          items-center;
+  background: #e0e0e0;
+  transition: box-shadow 5s;
+  box-shadow:
+    5px 5px 9px #bababa,
+    -5px -5px 9px #fff
+    ;
+}
+
+.neumorph-box:is(:hover, :focus):not(.without-inset){
+  box-shadow:
+    inset 5px 5px 9px #bababa,
+    inset -5px -5px 9px #fff
+    ;
+}
+
+.player-range {
+  /*@apply w-[80%] accent-black appearance-none bg-[#f2f2f2] border border-[#e0e0e0] rounded-full cursor-pointer;*/
+  /*box-shadow:*/
+  /*  inset 5px 5px 8px #bababa,*/
+  /*  inset -5px -5px 8px #fff*/
+  /*  ;*/
+  @apply relative overflow-hidden appearance-none bg-transparent cursor-pointer w-80% h-15px accent-black;
+}
+
+.player-range::before { 
+  @apply content-[''] w-7.5px h-[7.5px] absolute top-0 left-0;
+  background-image: radial-gradient(circle at 100% 100%, black 7.5px, #e0e0e0 7.5px);
+}
+
+.player-range::after { 
+  @apply content-[''] w-7.5px h-[7.5px] absolute bottom-0 left-0;
+  background-image: radial-gradient(circle at 100% 0%, black 7.5px, #e0e0e0 7.5px);
+}
+
+.player-range::-webkit-slider-runnable-track {
+  @apply w-[80%] bg-[#e0e0e0] border border-#e0e0e0 rounded-full cursor-pointer;
+  box-shadow:
+    inset 2px 2px 4px #bababa,
+    inset -2px -2px 4px #fff
+    ;
+}
+
+.player-range::-webkit-slider-thumb {
+  @apply appearance-none bg-black h-16px aspect-1 border border-0 rounded-full;
+  border-image-source: linear-gradient(90deg, black 50%, transparent 0);
+  border-image-slice: 1;
+  border-image-width: 8px 100vw;
+  border-image-outset: 0 calc(100vw);
+}
+
+.player-range::-moz-range-track {
+  @apply w-[80%] bg-[#f2f2f2] border border-#e0e0e0 rounded-full cursor-pointer;
+  box-shadow:
+    inset 2px 2px 4px #bababa,
+    inset -2px -2px 4px #fff
+    ;
+}
+
+
+.music-cover {
+  @apply w-[90%] h-[90%] border border-0 rounded-full;
+  box-shadow:
+    10px 10px 18px #bababa,
+    -10px -10px 18px #fff
+    ;
+}
