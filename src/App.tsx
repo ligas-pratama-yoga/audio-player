@@ -37,6 +37,13 @@ function App() {
 
   const audioRef: any = useRef(null)
 
+  const handleLoadMetaData = () => {
+    setCurrentTime(audioRef.current.currentTime)
+    setDuration(audioRef.current.duration)
+    setIsLoved(musicList[musicIndex].isLoved)
+    setIsFav(musicList[musicIndex].isFav)
+  }
+
   const handleClick = () => { 
     setIsPlaying(!isPlaying)
     if(isPlaying) audioRef.current.pause()
@@ -111,6 +118,7 @@ function App() {
         onTimeUpdate={handleTimeUpdate}
         autoPlay={isPlaying}
         onEnded={handleAudioEnd}
+        onLoadedMetadata={handleLoadMetaData}
       />
       <div className="mt-40 flex flex-col justify-end items-center">
         <h1>{musicList[musicIndex].author}</h1>
